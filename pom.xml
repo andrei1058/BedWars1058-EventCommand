@@ -17,6 +17,14 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>BedWars1058</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
@@ -52,6 +60,5 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 
 </project>
