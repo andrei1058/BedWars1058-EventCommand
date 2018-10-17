@@ -1,5 +1,5 @@
 name: BedWars1058-Cmds
 author: andrei1058
 softdepend: [BedWars1058]
-version: 1.3
+version: ${project.version}
 main: com.andrei1058.bedwars.cmds.Main
