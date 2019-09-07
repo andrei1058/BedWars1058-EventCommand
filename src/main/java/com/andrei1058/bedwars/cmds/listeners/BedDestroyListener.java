@@ -1,6 +1,6 @@
 package com.andrei1058.bedwars.cmds.listeners;
 
-import com.andrei1058.bedwars.api.events.BedBreakEvent;
+import com.andrei1058.bedwars.api.events.player.PlayerBedBreakEvent;
 import com.andrei1058.bedwars.cmds.ConfigPath;
 import com.andrei1058.bedwars.cmds.Main;
 import org.bukkit.Bukkit;
@@ -11,7 +11,7 @@ import org.bukkit.event.Listener;
 public class BedDestroyListener implements Listener {
 
     @EventHandler
-    public void onBedDestroy(BedBreakEvent e) {
+    public void onBedDestroy(PlayerBedBreakEvent e) {
 
         for (String s : Main.getCfg().getYml().getStringList(ConfigPath.BED_DESTROY_FOR_DESTROYER_AS_PLAYER)) {
             if (s.trim().isEmpty()) continue;

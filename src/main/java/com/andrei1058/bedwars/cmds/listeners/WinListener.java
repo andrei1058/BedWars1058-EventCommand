@@ -1,7 +1,7 @@
 package com.andrei1058.bedwars.cmds.listeners;
 
-import com.andrei1058.bedwars.api.GameState;
-import com.andrei1058.bedwars.api.events.GameStateChangeEvent;
+import com.andrei1058.bedwars.api.arena.GameState;
+import com.andrei1058.bedwars.api.events.gameplay.GameStateChangeEvent;
 import com.andrei1058.bedwars.cmds.ConfigPath;
 import com.andrei1058.bedwars.cmds.Main;
 import org.bukkit.Bukkit;
@@ -15,7 +15,7 @@ public class WinListener implements Listener {
 
     @EventHandler
     public void onWin(GameStateChangeEvent e) {
-        if (e.getState() == GameState.restarting) {
+        if (e.getNewState() == GameState.restarting) {
             Bukkit.getScheduler().runTaskLater(getPlugin(), () -> {
                 for (Player p : e.getArena().getPlayers()) {
                     for (String s : Main.getCfg().getYml().getStringList(ConfigPath.GAME_WIN_WINNER_CMDS_AS_PLAYER)) {

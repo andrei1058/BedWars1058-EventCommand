@@ -1,15 +1,12 @@
 package com.andrei1058.bedwars.cmds.listeners;
 
-import com.andrei1058.bedwars.api.events.PlayerKillEvent;
+import com.andrei1058.bedwars.api.events.player.PlayerKillEvent;
 import com.andrei1058.bedwars.cmds.ConfigPath;
 import com.andrei1058.bedwars.cmds.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-
-import static com.andrei1058.bedwars.cmds.Main.getPlugin;
-
 public class FinalKillsListener implements Listener {
 
 

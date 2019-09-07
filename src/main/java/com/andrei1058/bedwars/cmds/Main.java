@@ -1,11 +1,13 @@
 package com.andrei1058.bedwars.cmds;
 
+import com.andrei1058.bedwars.api.BedWars;
+import com.andrei1058.bedwars.api.configuration.ConfigManager;
 import com.andrei1058.bedwars.cmds.listeners.BedDestroyListener;
 import com.andrei1058.bedwars.cmds.listeners.FinalKillsListener;
 import com.andrei1058.bedwars.cmds.listeners.RegularKillsListener;
 import com.andrei1058.bedwars.cmds.listeners.WinListener;
-import com.andrei1058.bedwars.configuration.ConfigManager;
 import org.bukkit.Bukkit;
+import org.bukkit.block.data.type.Bed;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -16,6 +18,7 @@ public class Main extends JavaPlugin implements Listener {
 
     private static Main plugin;
     private static ConfigManager cfg;
+    public static BedWars api;
 
     public void onEnable() {
         plugin = this;
@@ -27,11 +30,21 @@ public class Main extends JavaPlugin implements Listener {
             return;
         }
 
-        /** Setup configuration */
-        cfg = new ConfigManager("config", "plugins/BedWars1058/Addons/Cmds", false);
+        try {
+            Class.forName("com.andrei1058.bedwars.api.BedWars");
+        } catch (Exception ex){
+            getLogger().severe("Your BedWars1058 version is outdated. Please download the latest version!");
+            Bukkit.getPluginManager().disablePlugin(this);
+            return;
+        }
+
+        api = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
+
+        /* Setup configuration */
+        cfg = new ConfigManager(this, "config", "plugins/BedWars1058/Addons/Cmds");
         setupConfiguration();
 
-        /** Register listeners */
+        /* Register listeners */
         if (getCfg().getBoolean(ConfigPath.GAME_WIN_ENABLE)) {
             Bukkit.getPluginManager().registerEvents(new WinListener(), getPlugin());
         }
