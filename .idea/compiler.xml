@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BedWars1058-RewardCMDS" />
+        <module name="reward-cmds" />
       </profile>
     </annotationProcessing>
   </component>

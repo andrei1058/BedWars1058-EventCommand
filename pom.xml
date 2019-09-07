@@ -6,7 +6,7 @@
 
     <groupId>com.andrei1058.bedwars</groupId>
     <artifactId>reward-cmds</artifactId>
-    <version>1.4</version>
+    <version>1.4.1</version>
     <build>
         <plugins>
             <plugin>
@@ -32,8 +32,8 @@
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
-            <id>bedwars-repo</id>
-            <url>http://repo.andrei1058.com:8081/repository/maven-public/</url>
+            <id>gitlab-maven</id>
+            <url>https://gitlab.com/api/v4/groups/3831352/-/packages/maven</url>
         </repository>
     </repositories>
     <dependencies>
@@ -41,7 +41,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.13-R0.1-SNAPSHOT</version>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <!--Bukkit API-->
@@ -53,8 +53,8 @@
         </dependency>
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
-            <artifactId>bedwars</artifactId>
-            <version>13</version>
+            <artifactId>bedwars-api</artifactId>
+            <version>0.14.beta</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
