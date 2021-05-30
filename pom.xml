@@ -6,12 +6,13 @@
 
     <groupId>com.andrei1058.bedwars</groupId>
     <artifactId>reward-cmds</artifactId>
-    <version>1.4.1</version>
+    <version>1.4.2</version>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>
@@ -28,35 +29,28 @@
 
     <repositories>
         <repository>
-            <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <id>codemc-nms</id>
+            <url>https://repo.codemc.io/repository/nms/</url>
         </repository>
         <repository>
-            <id>gitlab-maven</id>
-            <url>https://gitlab.com/api/v4/groups/3831352/-/packages/maven</url>
+            <id>andrei1058-releases</id>
+            <url>http://repo.andrei1058.com/releases</url>
         </repository>
     </repositories>
     <dependencies>
         <!--Spigot API-->
         <dependency>
             <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.8.8-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-        <!--Bukkit API-->
-        <dependency>
-            <groupId>org.bukkit</groupId>
-            <artifactId>bukkit</artifactId>
-            <version>1.13-R0.1-SNAPSHOT</version>
+            <artifactId>spigot</artifactId>
+            <version>1.12.2-R0.1-SNAPSHOT</version>
+            <type>jar</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>bedwars-api</artifactId>
-            <version>0.14.beta</version>
+            <version>21.5</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
 </project>

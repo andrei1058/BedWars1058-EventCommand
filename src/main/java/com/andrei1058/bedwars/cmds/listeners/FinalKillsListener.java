@@ -7,6 +7,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+
 public class FinalKillsListener implements Listener {
 
 
@@ -26,7 +27,7 @@ public class FinalKillsListener implements Listener {
             }
             for (String s : Main.getCfg().getYml().getStringList(ConfigPath.FINAL_KILL_VICTIM_NO_KILLER_AS_CONSOLE)) {
                 if (s.trim().isEmpty()) continue;
-                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "/" + s.replace("{victim}", victim.getName())
+                Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), s.replace("{victim}", victim.getName())
                         .replace("{arena}", e.getArena().getWorldName())
                         .replace("{arenaDisplay}", e.getArena().getDisplayName())
                         .replace("{group}", e.getArena().getGroup()));
@@ -44,7 +45,7 @@ public class FinalKillsListener implements Listener {
 
                 for (String s : Main.getCfg().getYml().getStringList(ConfigPath.FINAL_KILL_VICTIM_WITH_KILLER_AS_CONSOLE)) {
                     if (s.trim().isEmpty()) continue;
-                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "/" + s.replace("{victim}", victim.getName())
+                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), s.replace("{victim}", victim.getName())
                             .replace("{arena}", e.getArena().getWorldName())
                             .replace("{arenaDisplay}", e.getArena().getDisplayName())
                             .replace("{group}", e.getArena().getGroup())
@@ -63,7 +64,7 @@ public class FinalKillsListener implements Listener {
 
                 for (String s : Main.getCfg().getYml().getStringList(ConfigPath.FINAL_KILL_KILLER_AS_CONSOLE)) {
                     if (s.trim().isEmpty()) continue;
-                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "/" + s.replace("{victim}", victim.getName())
+                    Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), s.replace("{victim}", victim.getName())
                             .replace("{arena}", e.getArena().getWorldName())
                             .replace("{arenaDisplay}", e.getArena().getDisplayName())
                             .replace("{group}", e.getArena().getGroup())
