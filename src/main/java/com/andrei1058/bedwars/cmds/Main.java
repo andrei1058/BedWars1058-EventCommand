@@ -7,7 +7,6 @@ import com.andrei1058.bedwars.cmds.listeners.FinalKillsListener;
 import com.andrei1058.bedwars.cmds.listeners.RegularKillsListener;
 import com.andrei1058.bedwars.cmds.listeners.WinListener;
 import org.bukkit.Bukkit;
-import org.bukkit.block.data.type.Bed;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
