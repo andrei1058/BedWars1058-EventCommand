@@ -7,12 +7,13 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.jetbrains.annotations.NotNull;
 
 public class FinalKillsListener implements Listener {
 
 
     @EventHandler
-    public void onFinalKill(PlayerKillEvent e) {
+    public void onFinalKill(@NotNull PlayerKillEvent e) {
         if (!e.getCause().toString().contains("FINAL_KILL")) return;
         Player killer = e.getKiller(), victim = e.getVictim();
 

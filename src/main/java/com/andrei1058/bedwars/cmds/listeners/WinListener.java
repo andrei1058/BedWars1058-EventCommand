@@ -8,13 +8,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.jetbrains.annotations.NotNull;
 
 import static com.andrei1058.bedwars.cmds.Main.getPlugin;
 
 public class WinListener implements Listener {
 
     @EventHandler
-    public void onWin(GameStateChangeEvent e) {
+    public void onWin(@NotNull GameStateChangeEvent e) {
         if (e.getNewState() == GameState.restarting) {
             Bukkit.getScheduler().runTaskLater(getPlugin(), () -> {
                 for (Player p : e.getArena().getPlayers()) {

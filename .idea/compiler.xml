@@ -6,9 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BedWars1058-RewardCMDS" />
         <module name="reward-cmds" />
+        <module name="BedWars1058-RewardCMDS" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="reward-cmds" target="14" />
+    </bytecodeTargetLevel>
   </component>
 </project>
